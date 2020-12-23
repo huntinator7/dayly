@@ -22,6 +22,7 @@ export const onUserCreate = functions.auth.user().onCreate((user) => {
     })
     .then(() => {
       db.collection("User").doc(user.uid).collection("Day").doc("1").set({
+        day: 1,
         tasks: [],
       });
     });
